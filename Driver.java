@@ -1,8 +1,6 @@
 import java.util.*;
 
 public class Driver {
-
-    // 1. Total number of books by an author
     public static int getTotalBooksByAuthor(String author, List<Book> books) {
         int count = 0;
         for (Book b : books) {
@@ -13,7 +11,6 @@ public class Driver {
         return count;
     }
 
-    // 2. Show all authors
     public static Set<String> getAllAuthors(List<Book> books) {
         Set<String> authors = new HashSet<>();
         for (Book b : books) {
@@ -22,7 +19,6 @@ public class Driver {
         return authors;
     }
 
-    // 3. Get books by an author
     public static List<String> getBooksByAuthor(String author, List<Book> books) {
         List<String> titles = new ArrayList<>();
         for (Book b : books) {
@@ -33,7 +29,6 @@ public class Driver {
         return titles;
     }
 
-    // 4. Books by rating
     public static List<Book> getBooksByRating(double rating, List<Book> books) {
         List<Book> res = new ArrayList<>();
         for (Book b : books) {
@@ -44,7 +39,6 @@ public class Driver {
         return res;
     }
 
-    // 5. Prices of books by author
     public static Map<String, Double> getBooksAndPricesByAuthor(String author, List<Book> books) {
         Map<String, Double> data = new LinkedHashMap<>();
         for (Book b : books) {
@@ -55,11 +49,9 @@ public class Driver {
         return data;
     }
 
-    // Main program
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // Load dataset
         List<Book> books = DatasetReader.readBooksFromCSV("data.csv");
 
         System.out.println("==== Amazon Bestselling Books (2009-2019) ====");
